@@ -1,15 +1,20 @@
 package com.grayhawk.test.animate;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    public AlertDialog.Builder alertBuilder;
+    public AlertDialog alertDialog;
     int activePlayer = 1, activeSession=1, count=0;
     int imageRes, coinPosition;
     String textviewMessage;
@@ -83,4 +88,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+
+        alertBuilder = new AlertDialog.Builder(MainActivity.this);
+
+        alertBuilder
+                .setMessage("Do you want to quit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        MainActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
+        alertDialog = alertBuilder.create();
+        alertDialog.show();
+        //can also be done using
+        //alertBuilder.create().show();
+    }
 }
