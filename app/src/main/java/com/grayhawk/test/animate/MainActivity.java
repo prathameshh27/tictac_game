@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if(count==8)
-            {
+            {   /////////Draw/////////
                 textViewMessage="It's a Draw!";
                 gameOver();
                 //alertCallOption=2;
