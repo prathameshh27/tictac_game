@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void gameOver(){
         resetButton.setText(alertMessage);
-        statusText.setTranslationY(1500);
-        statusText.animate().translationYBy(-1500).setDuration(400).setStartDelay(800);
+        statusText.setTranslationY(1600);
+        statusText.animate().translationYBy(-1600).setDuration(400).setStartDelay(800);
         resetButton.setTranslationY(-1500);
         resetButton.animate().translationYBy(1500).setDuration(400).setStartDelay(1200);
     }
