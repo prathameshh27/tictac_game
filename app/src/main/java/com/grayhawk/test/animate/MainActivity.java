@@ -46,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
         statusText.setBackground(statusBackground);
     }
 
+    public void gameOver(){
+        resetButton.setText(alertMessage);
+        statusText.setTranslationY(1500);
+        statusText.animate().translationYBy(-1500).setDuration(400).setStartDelay(800);
+        resetButton.setTranslationY(-1500);
+        resetButton.animate().translationYBy(1500).setDuration(400).setStartDelay(1200);
+    }
+
     public void resetActivity(View view)
     {
         Intent intent=new Intent(this, MainActivity.class);
@@ -110,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             if(count==8)
             {
                 textViewMessage="It's a Draw!";
-                resetButton.setText(alertMessage);
+                gameOver();
                 //alertCallOption=2;
                 //alertCall();
             }
@@ -122,13 +130,13 @@ public class MainActivity extends AppCompatActivity {
                     activeSession=0;
                     if(activePlayer==0){
                         textViewMessage="Ironman Won!";
-                        resetButton.setText(alertMessage);
+                        gameOver();
                         //alertCall();
                     }
 
                     else{
                         textViewMessage="Captain Won!"; // /nPress Reset to play again.
-                        resetButton.setText(alertMessage);
+                        gameOver();
                         //alertCall();
                     }
 
