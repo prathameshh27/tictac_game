@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ImageStyle">
+        <item name="android:layout_height">90dp</item>
+        <item name="android:layout_width">90dp</item>
+        <item name="android:onClick">dropDown</item>
+        <!--<item name="android:src">@drawable/reactor_img</item>-->
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">12dp</item>
+        <item name="android:layout_marginTop">14dp</item>
+        <item name="android:layout_marginLeft">14dp</item>
+    </style>
+
+    <style name="ResetButton">
+
+    </style>
+
 </resources>
